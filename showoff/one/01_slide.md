@@ -1,10 +1,80 @@
-!SLIDE 
+!SLIDE transition=none
 # FPM #
 ## The Swiss Army knife of the casual packager ##
 
-!SLIDE bullets incremental
-# Bullet Points #
+!SLIDE transition=none
+## A day in the life of a DevOps ##
 
-* first point
-* second point
-* third point
+!SLIDE incremental transition=none
+* When operating a production environment, one of your best friends is your *configuration management software*.
+* *Puppet* is a well known open source configuration management tool.
+
+!SLIDE bullets transition=none
+What Puppet typically handles for you:
+
+* Network, Email and system tools
+* System user accounts
+* Monitoring agent
+* Web server
+* Database server
+* Ruby runtime
+* All your configuration files
+
+!SLIDE incremental transition=none
+* All you have to do now is deploy your app and maybe some Gems.
+* Puppet knows how to install (and uninstall) *native packages*.
+* Wanna build one for your app?
+
+!SLIDE incremental transition=none
+* Native packaging is <span class="good">great</span>
+* Native packaging is <span class="bad">hard</span>
+* Distribution policies are here for *good reasons*...
+* ...but you don't care about policies if you are not a maintainer!
+
+!SLIDE transition=none
+## FPM to the rescue ##
+
+!SLIDE bullets incremental transition=none
+FPM puts a *native package blanket* on top of:
+
+* directories
+* gems
+* Python modules
+* Node packages
+
+!SLIDE transition=none
+It'll make it deployable by your system packages manager but won't fool a maintainer.
+
+!SLIDE transition=none
+## FPM in practice ##
+
+!SLIDE transition=none
+### Packaging the runtime deps of *rivierarb.fr* ###
+    @@@ sh
+    sudo gem install fpm
+    
+    mkdir -p ~/tmp/gems
+    cd ~/tmp
+    
+    gem install --no-ri --no-rdoc \
+                --install-dir ~/tmp/gems \
+                jekyll compass rdiscount
+    
+    find ~/tmp/gems/cache/ -name "*.gem" | xargs -rn1 fpm -s gem -t deb
+
+!SLIDE transition=none
+### Packaging the content of *rivierarb.fr* ###
+    @@@ sh
+    mkdir -p ~/tmp/opt/rivierarb
+    
+    wget -O - https://github.com/rivierarb/rivierarb/tarball/gh-pages |\
+    tar -xz --strip-components=1 -C ~/tmp/opt/rivierarb
+    
+    fpm -s dir -t deb -n rivierarb -v 0.1.0 -a all \
+        -d "rubygem-jekyll (>= 0.11.0)" \
+        -d "rubygem-compass (>= 0.11.5)" \
+        -d "rubygem-rdiscount (>= 1.6.8)" \
+        ./opt/rivierarb
+
+!SLIDE transition=none
+# References #

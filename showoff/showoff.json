@@ -1,1 +1,4 @@
-{ "name": "My Preso", "sections": [ {"section":"one"} ]}
+{
+  "name": "FPM minitalk at Ruby Drinkup of Sophia",
+  "sections": [ {"section":"one"} ]
+}
