@@ -150,14 +150,15 @@ gem install --no-ri --no-rdoc \
             --install-dir ~/tmp/gems \
             jekyll compass rdiscount
 
-find ~/tmp/gems/cache/ -name "*.gem" | xargs -rn1 fpm -s gem -t deb</code></pre>
+find ~/tmp/gems/cache/ -name "*.gem" | xargs -rn1 \
+fpm -s gem -t deb</code></pre>
 </div>
 </div><div class="slide" data-transition="none"><div class="content topalign" ref="one/01_slide/12">
 <h3>Packaging the content of <em>rivierarb.fr</em></h3>
 
 <pre class="sh_sh"><code>mkdir -p ~/tmp/opt/rivierarb
 
-wget -O - https://github.com/rivierarb/rivierarb/tarball/gh-pages |\
+wget -O - http://github.com/rivierarb/rivierarb/tarball/gh-pages|\
 tar -xz --strip-components=1 -C ~/tmp/opt/rivierarb
 
 fpm -s dir -t deb -n rivierarb -v 0.2.0 -a all \
