@@ -1,0 +1,21 @@
+.slide {
+  background-color: #555555;
+  background-image: -moz-linear-gradient(#333333, #555555);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #333333), color-stop(1, #555555));
+  background-image: -webkit-linear-gradient(#333333, #555555);
+  background-image: -o-linear-gradient(#333333, #555555); }
+
+.content {
+  margin-left: 30px;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  color: #FFF; }
+  .content.bullets ul li {
+    text-align: left;
+    padding: 0; }
+  .content h1 {
+    text-align: left;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif; }
+  .content h2 {
+    text-align: left;
+    font-family: Georgia, serif;
+    font-style: italic; }

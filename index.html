@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>FPM minitalk at Ruby Drinkup of Sophia</title>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+    <link rel="stylesheet" href="file/default.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+    setupPreso(false, './');
+  });
+  </script>
+</head>
+
+<body>
+
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">&larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">z</td><td>toggle help (this)</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="one/01_slide/1">
+<h1>FPM</h1>
+
+<h2>The Swiss Army knife of the casual packager</h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/2">
+<h2>A day in the life of a DevOps</h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/3">
+<ul>
+<li>When operating a production environment, one of your best friends is your <em>configuration management software</em>.</li>
+<li><em>Puppet</em> is a well known open source configuration management tool.</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/01_slide/4">
+<p>What Puppet typically handles for you:</p>
+
+<ul>
+<li>Network, Email and system tools</li>
+<li>System user accounts</li>
+<li>Monitoring agent</li>
+<li>Web server</li>
+<li>Database server</li>
+<li>Ruby runtime</li>
+<li>All your configuration files</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/5">
+<ul>
+<li>All you have to do now is deploy your app and maybe some Gems.</li>
+<li>Puppet knows how to install (and uninstall) <em>native packages</em>.</li>
+<li>Wanna build one for your app?</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/6">
+<ul>
+<li>Native packaging is <span class="good">great</span></li>
+<li>Native packaging is <span class="bad">hard</span></li>
+<li>Distribution policies are here for <em>good reasons</em>...</li>
+<li>...but you don't care about policies if you are not a maintainer!</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/7">
+<h2>FPM to the rescue</h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/8">
+<p>FPM puts a <em>native package blanket</em> on top of:</p>
+
+<ul>
+<li>directories</li>
+<li>gems</li>
+<li>Python modules</li>
+<li>Node packages</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/9">
+<p>It'll make it deployable by your system packages manager but won't fool a maintainer.</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/10">
+<h2>FPM in practice</h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content topalign" ref="one/01_slide/11">
+<h3>Packaging the runtime deps of <em>rivierarb.fr</em></h3>
+
+<pre class="sh_sh"><code>sudo gem install fpm
+
+mkdir -p ~/tmp/gems
+cd ~/tmp
+
+gem install --no-ri --no-rdoc \
+            --install-dir ~/tmp/gems \
+            jekyll compass rdiscount
+
+find ~/tmp/gems/cache/ -name "*.gem" | xargs -rn1 fpm -s gem -t deb</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content topalign" ref="one/01_slide/12">
+<h3>Packaging the content of <em>rivierarb.fr</em></h3>
+
+<pre class="sh_sh"><code>mkdir -p ~/tmp/opt/rivierarb
+
+wget -O - https://github.com/rivierarb/rivierarb/tarball/gh-pages |\
+tar -xz --strip-components=1 -C ~/tmp/opt/rivierarb
+
+fpm -s dir -t deb -n rivierarb -v 0.2.0 -a all \
+    -d "rubygem-jekyll (&gt;= 0.11.0)" \
+    -d "rubygem-compass (&gt;= 0.11.5)" \
+    -d "rubygem-rdiscount (&gt;= 1.6.8)" \
+    ./opt/rivierarb</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content topalign commandline incremental" ref="one/01_slide/13">
+<h3>Deploying <em>rivierarb.fr</em></h3>
+
+<pre class="sh_sh"><code><code class="command">$ ls -1 *.deb</code><code class="result">
+
+rivierarb_0.2.0_all.deb
+rubygem-albino_1.3.3_all.deb
+rubygem-chunky-png_1.2.1_all.deb
+rubygem-classifier_1.3.3_all.deb
+rubygem-compass_0.11.5_all.deb
+rubygem-directory-watcher_1.4.1_all.deb
+rubygem-fast-stemmer_1.0.0_amd64.deb
+rubygem-fssm_0.2.7_all.deb
+rubygem-jekyll_0.11.0_all.deb
+rubygem-kramdown_0.13.3_all.deb
+rubygem-liquid_2.2.2_all.deb
+rubygem-maruku_0.6.0_all.deb
+rubygem-posix-spawn_0.3.6_amd64.deb
+rubygem-rdiscount_1.6.8_amd64.deb
+rubygem-sass_3.1.7_all.deb
+rubygem-syntax_1.0.0_all.deb</code></code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content topalign bullets incremental" ref="one/01_slide/14">
+<h3>Deploying <em>rivierarb.fr</em></h3>
+
+<p>Next steps:</p>
+
+<ul>
+<li>Upload all packages to your private repository</li>
+<li>Reference the new version in your Puppet manifest</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content topalign" ref="one/01_slide/15">
+<h3>Deploying <em>rivierarb.fr</em></h3>
+
+<pre class="sh_ruby"><code>package { 'rivierarb': ensure =&gt; '0.2.0' }</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/16">
+<h1>References</h1>
+</div>
+</div></div>
+
+</body>
+</html>
