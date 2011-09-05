@@ -60,14 +60,15 @@ It'll make it deployable by your system packages manager but won't fool a mainta
                 --install-dir ~/tmp/gems \
                 jekyll compass rdiscount
     
-    find ~/tmp/gems/cache/ -name "*.gem" | xargs -rn1 fpm -s gem -t deb
+    find ~/tmp/gems/cache/ -name "*.gem" | xargs -rn1 \
+    fpm -s gem -t deb
 
 !SLIDE topalign transition=none
 ### Packaging the content of *rivierarb.fr* ###
     @@@ sh
     mkdir -p ~/tmp/opt/rivierarb
     
-    wget -O - https://github.com/rivierarb/rivierarb/tarball/gh-pages |\
+    wget -O - http://github.com/rivierarb/rivierarb/tarball/gh-pages|\
     tar -xz --strip-components=1 -C ~/tmp/opt/rivierarb
     
     fpm -s dir -t deb -n rivierarb -v 0.2.0 -a all \
