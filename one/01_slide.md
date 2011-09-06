@@ -10,6 +10,7 @@
 !SLIDE transition=none
 ## Who am I? ##
 * @ebastien
+* <https://github.com/ebastien>
 * Polyglot programmer
 * Technologies enthusiast
 * FOSS believer
@@ -128,7 +129,7 @@ Next steps:
     @@@ ruby
     package { 'rivierarb': ensure => '0.2.0' }
 
-!SLIDE transition=none
+!SLIDE references transition=none
 # References #
 * <http://github.com/jordansissel/fpm>
 * <http://morethanseven.net/2011/04/29/Creating-a-cucumber-nagios-package-with-fpm.html>
