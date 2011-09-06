@@ -76,18 +76,36 @@
 <h1>FPM</h1>
 
 <h2>The Swiss Army knife of the casual packager</h2>
+
+<ul class="title_desc">
+<li>Emmanuel Bastien</li>
+<li>September 2011</li>
+<li>Ruby Drinkup Sophia</li>
+</ul>
+
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/2">
+<h2>Who am I?</h2>
+
+<ul>
+<li>@ebastien</li>
+<li>Polyglot programmer</li>
+<li>Technologies enthusiast</li>
+<li>FOSS believer</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/3">
 <h2>A day in the life of a DevOps</h2>
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/3">
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/4">
 <ul>
 <li>When operating a production environment, one of your best friends is your <em>configuration management software</em>.</li>
 <li><em>Puppet</em> is a well known open source configuration management tool.</li>
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/01_slide/4">
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/01_slide/5">
 <p>What Puppet typically handles for you:</p>
 
 <ul>
@@ -101,7 +119,7 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/5">
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/6">
 <ul>
 <li>All you have to do now is deploy your app and maybe some Gems.</li>
 <li>Puppet knows how to install (and uninstall) <em>native packages</em>.</li>
@@ -109,7 +127,7 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/6">
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/7">
 <ul>
 <li>Native packaging is <span class="good">great</span></li>
 <li>Native packaging is <span class="bad">hard</span></li>
@@ -118,10 +136,17 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/7">
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/8">
 <h2>FPM to the rescue</h2>
+
+<ul class="title_desc">
+<li>"Effing Package Management"</li>
+<li>https://github.com/jordansissel/fpm</li>
+<li>by @jordansissel</li>
+</ul>
+
 </div>
-</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/8">
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/9">
 <p>FPM puts a <em>native package blanket</em> on top of:</p>
 
 <ul>
@@ -132,13 +157,13 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/9">
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/10">
 <p>It'll make it deployable by your system packages manager but won't fool a maintainer.</p>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/10">
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/11">
 <h2>FPM in practice</h2>
 </div>
-</div><div class="slide" data-transition="none"><div class="content topalign" ref="one/01_slide/11">
+</div><div class="slide" data-transition="none"><div class="content topalign" ref="one/01_slide/12">
 <h3>Packaging the runtime deps of <em>rivierarb.fr</em></h3>
 
 <pre class="sh_sh"><code>sudo gem install fpm
@@ -153,7 +178,7 @@ gem install --no-ri --no-rdoc \
 find ~/tmp/gems/cache/ -name "*.gem" | xargs -rn1 \
 fpm -s gem -t deb</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content topalign" ref="one/01_slide/12">
+</div><div class="slide" data-transition="none"><div class="content topalign" ref="one/01_slide/13">
 <h3>Packaging the content of <em>rivierarb.fr</em></h3>
 
 <pre class="sh_sh"><code>mkdir -p ~/tmp/opt/rivierarb
@@ -167,7 +192,7 @@ fpm -s dir -t deb -n rivierarb -v 0.2.0 -a all \
     -d "rubygem-rdiscount (&gt;= 1.6.8)" \
     ./opt/rivierarb</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content topalign commandline incremental" ref="one/01_slide/13">
+</div><div class="slide" data-transition="none"><div class="content topalign commandline incremental" ref="one/01_slide/14">
 <h3>Deploying <em>rivierarb.fr</em></h3>
 
 <pre class="sh_sh"><code><code class="command">$ ls -1 *.deb</code><code class="result">
@@ -189,24 +214,35 @@ rubygem-rdiscount_1.6.8_amd64.deb
 rubygem-sass_3.1.7_all.deb
 rubygem-syntax_1.0.0_all.deb</code></code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content topalign bullets incremental" ref="one/01_slide/14">
+</div><div class="slide" data-transition="none"><div class="content topalign bullets incremental" ref="one/01_slide/15">
 <h3>Deploying <em>rivierarb.fr</em></h3>
 
 <p>Next steps:</p>
 
 <ul>
-<li>Upload all packages to your private repository</li>
+<li>Upload the packages to your private repository</li>
 <li>Reference the new version in your Puppet manifest</li>
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content topalign" ref="one/01_slide/15">
+</div><div class="slide" data-transition="none"><div class="content topalign" ref="one/01_slide/16">
 <h3>Deploying <em>rivierarb.fr</em></h3>
 
 <pre class="sh_ruby"><code>package { 'rivierarb': ensure =&gt; '0.2.0' }</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/16">
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/17">
 <h1>References</h1>
+
+<ul>
+<li><a href="http://github.com/jordansissel/fpm">http://github.com/jordansissel/fpm</a></li>
+<li><a href="http://morethanseven.net/2011/04/29/Creating-a-cucumber-nagios-package-with-fpm.html">http://morethanseven.net/2011/04/29/Creating-a-cucumber-nagios-package-with-fpm.html</a></li>
+<li><a href="http://projects.puppetlabs.com/projects/puppet/wiki">http://projects.puppetlabs.com/projects/puppet/wiki</a></li>
+<li><a href="http://www.jejik.com/articles/2006/09/setting_up_and_managing_an_apt_repository_with_reprepro/">http://www.jejik.com/articles/2006/09/setting_up_and_managing_an_apt_repository_with_reprepro/</a></li>
+</ul>
+
+
+<p class="license">This work is licensed under the Creative Commons Attribution 3.0 Unported License.</p>
+
 </div>
 </div></div>
 
