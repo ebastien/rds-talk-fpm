@@ -1,6 +1,18 @@
 !SLIDE transition=none
 # FPM #
 ## The Swiss Army knife of the casual packager ##
+<ul class="title_desc">
+<li>Emmanuel Bastien</li>
+<li>September 2011</li>
+<li>Ruby Drinkup Sophia</li>
+</ul>
+
+!SLIDE transition=none
+## Who am I? ##
+* @ebastien
+* Polyglot programmer
+* Technologies enthusiast
+* FOSS believer
 
 !SLIDE transition=none
 ## A day in the life of a DevOps ##
@@ -33,6 +45,11 @@ What Puppet typically handles for you:
 
 !SLIDE transition=none
 ## FPM to the rescue ##
+<ul class="title_desc">
+<li>"Effing Package Management"</li>
+<li>https://github.com/jordansissel/fpm</li>
+<li>by @jordansissel</li>
+</ul>
 
 !SLIDE bullets incremental transition=none
 FPM puts a *native package blanket* on top of:
@@ -103,7 +120,7 @@ It'll make it deployable by your system packages manager but won't fool a mainta
 ### Deploying *rivierarb.fr* ###
 Next steps:
 
-* Upload all packages to your private repository
+* Upload the packages to your private repository
 * Reference the new version in your Puppet manifest
 
 !SLIDE topalign transition=none
@@ -113,3 +130,9 @@ Next steps:
 
 !SLIDE transition=none
 # References #
+* <http://github.com/jordansissel/fpm>
+* <http://morethanseven.net/2011/04/29/Creating-a-cucumber-nagios-package-with-fpm.html>
+* <http://projects.puppetlabs.com/projects/puppet/wiki>
+* <http://www.jejik.com/articles/2006/09/setting_up_and_managing_an_apt_repository_with_reprepro/>
+
+<p class="license">This work is licensed under the Creative Commons Attribution 3.0 Unported License.</p>
