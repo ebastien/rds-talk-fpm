@@ -1,12 +1,16 @@
 @import 'css3-sass-mixins/all';
 
+$codefont: 'Courier New', Courier, monospace;
+$mainfont: 'Trebuchet MS', Helvetica, sans-serif;
+$altfont: Georgia, serif;
+
 .slide {
   @include linear-gradient(#333, #555);
 }
 
 .content {
   margin-left: 30px;
-  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  font-family: $mainfont;
   color: #FFF;
   line-height: 1.3;
   font-size: 40px;
@@ -30,14 +34,14 @@
   
   h1 {
     text-align: left;
-    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-family: $mainfont;
     font-size: 80px;
     margin-bottom: 50px;
   }
   
   h2 {
     text-align: left;
-    font-family: Georgia, serif;
+    font-family: $altfont;
     font-style: italic;
     font-size: 48px;
     margin-bottom: 50px;
@@ -45,7 +49,7 @@
   
   h3 {
     text-align: left;
-    font-family: Georgia, serif;
+    font-family: $altfont;
     font-style: italic;
     font-size: 32px;
     margin-bottom: 50px;
@@ -56,15 +60,16 @@
     
     margin: 0 30px 0 0;
     padding: 5px;
-    font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
     font-weight: bold;
     line-height: 1.3;
   }
   
   code {
+    font-family: $codefont;
+  
     .sh_string {
-      font-family: 'Courier New', Courier, monospace;
+      font-family: $codefont;
       color: #806E42;
     }
     
@@ -125,4 +130,24 @@
 
 div.content.topalign {
   height: 700px;
+}
+
+@media print {
+  .slide .center {
+    width: 1024px;
+    height: 768px;
+  }
+
+  #preso, .slide {
+    width: 1024px;
+    height: 768px;
+  }
+
+  #footer {
+    width: 1024px;
+  }
+  
+  pre, code {
+    font-family: $codefont;
+  }
 }
